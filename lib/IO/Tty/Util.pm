@@ -5,7 +5,7 @@ use IO::Handle ;
 use IO::Select ;
 use Carp ;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require Exporter ;
 our @ISA = qw(Exporter) ;
@@ -147,14 +147,14 @@ None by default.
 
 L<IO::Tty> provides a lower level interface to ttys.
 
-openpty(3), login_tty(3), forkpty(3)
+I<openpty(3)>, I<login_tty(3)>, I<forkpty(3)>.
 
 
-=head1 BUG AND DEFICIENCIES
+=head1 BUGS AND DEFICIENCIES
 
 =over 4
 
-=item -
+=item Incomplete Support
 
 The current implementation does not support passing the C<name> parameter or the 
 C<struct termios> terminal properties parameter to C<openpty> and C<forkpty>.
@@ -164,7 +164,8 @@ C<struct termios> terminal properties parameter to C<openpty> and C<forkpty>.
 
 =head1 AUTHOR
 
-Patrick LeBoutillier, E<lt>patl@cpan.org<gt>
+Patrick LeBoutillier, E<lt>patl@cpan.orgE<gt>
+
 
 =head1 COPYRIGHT AND LICENSE
 
