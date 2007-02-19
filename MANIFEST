@@ -2,6 +2,7 @@ Changes
 Makefile.PL
 MANIFEST
 README
+TODO
 Util.xs
 t/IO-Tty-Util.t
 lib/IO/Tty/Util.pm

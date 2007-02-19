@@ -5,7 +5,7 @@ use IO::Handle ;
 use IO::Select ;
 use Carp ;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03' ;
 
 require Exporter ;
 our @ISA = qw(Exporter) ;
@@ -113,7 +113,7 @@ IO::Tty::Util - Perl bindings for libutil.so tty utility functions
 
 =head1 DESCRIPTION
 
-L<IO::Tty::Util> provides basic Perl bindings to the <openpty> and C<login_tty> functions
+L<IO::Tty::Util> provides basic Perl bindings to the C<openpty> and C<login_tty> functions
 found in C<libutil.so> and provides a Perl implementation of the C<forkpty> function.
 
 

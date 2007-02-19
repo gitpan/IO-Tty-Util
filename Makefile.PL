@@ -1,6 +1,26 @@
+use strict ;
+
 use ExtUtils::MakeMaker ;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+use Config ;
+
+my $ccflags = $Config{ccflags} ;
+my @C_INC = ($Config{usrinc}) ;
+while ($ccflags =~ /-I(\S+)/g){
+	push @C_INC, $1	;
+}
+
+foreach my $header (qw(pty.h utmp.h)){
+	my $found = 0 ;
+	foreach my $dir (@C_INC){
+		if (-f "$dir/$header"){
+			$found = 1 ;
+			print "Found $header in $dir.\n" ;
+			last ;
+		}
+	}
+	die("Can't find $header in any of " . join(', ', @C_INC)) unless $found ;
+}
+
 WriteMakefile(
     NAME              => 'IO::Tty::Util',
     VERSION_FROM      => 'lib/IO/Tty/Util.pm',
